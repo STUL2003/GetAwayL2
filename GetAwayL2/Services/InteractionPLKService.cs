@@ -55,6 +55,7 @@ namespace GetAwayL2.Services
 
         async public Task SendStringAsync(string host, int port, string message)
         {
+            // Отправка сообщения на TCP-server
                 using var client = new TcpClient();
                 await client.ConnectAsync(host, port);
 

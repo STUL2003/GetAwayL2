@@ -27,6 +27,7 @@ public class Programm
         var plkService = app.Services.GetRequiredService<PLKConnectionSendService>();
         var dbContextFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 
+        // Configure the HTTP request pipeline
         _ = Task.Run(async () =>
         {
             string plcHost = "127.0.0.1";

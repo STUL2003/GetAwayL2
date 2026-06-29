@@ -1,0 +1,14 @@
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.AssemblyInfoInputs.cache
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.AssemblyInfo.cs
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.csproj.CoreCompileInputs.cache
+C:\Users\dima\source\repos\TCPPlk\bin\Debug\net10.0\TCPPlk.exe
+C:\Users\dima\source\repos\TCPPlk\bin\Debug\net10.0\TCPPlk.deps.json
+C:\Users\dima\source\repos\TCPPlk\bin\Debug\net10.0\TCPPlk.runtimeconfig.json
+C:\Users\dima\source\repos\TCPPlk\bin\Debug\net10.0\TCPPlk.dll
+C:\Users\dima\source\repos\TCPPlk\bin\Debug\net10.0\TCPPlk.pdb
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.dll
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\refint\TCPPlk.dll
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.pdb
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\TCPPlk.genruntimeconfig.cache
+C:\Users\dima\source\repos\TCPPlk\obj\Debug\net10.0\ref\TCPPlk.dll

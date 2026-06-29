@@ -43,7 +43,7 @@ namespace GetAwayL2.Services
         }
         public async Task LogDB()
         {
-            await LoggerService.LogDB(dbContext, isValid, camMsgRequest, "Camera", null);
+            await LoggerService.LogDB(dbContext, isValid, camMsgRequest, "Camera", null, null);
         }
     }
 }

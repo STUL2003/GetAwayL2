@@ -36,5 +36,7 @@ namespace GetAwayL2.Services
                 await plkService.LogDB(message, $"Port {port} on host {host} is not open");
             }
         }
+
+
     }
 }

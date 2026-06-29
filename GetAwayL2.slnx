@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../TCPPlk/TCPPlk.csproj" />
+  <Project Path="GetAwayL2.csproj" />
+</Solution>

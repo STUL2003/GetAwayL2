@@ -25,6 +25,7 @@ pg_restore -h localhost -U dima -d EquipmentMonitor -v equipment.backup
 ```
 * Запустить ШЛЮЗ
 ```
+cd GetAwayL2
 dotnet run
 ```
 * Запросы

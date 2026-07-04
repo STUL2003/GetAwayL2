@@ -14,9 +14,11 @@ public class Programm
         builder.Services.AddOpenApi();
         builder.Services.AddDbContext<LogDBContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
         //builder.Services.AddSingleton<ParserCameraMsgService>();
-        builder.Services.AddTransient<CamMsgRequest>();
+        //builder.Services.AddTransient<CamMsgRequest>();
+        builder.Services.AddHostedService<TCPListennerServicecs>();
         builder.Services.AddScoped<ParserCameraMsgService>();
         builder.Services.AddSingleton<PLKConnectionSendService>();
+        builder.Services.AddScoped<ILoggerService, LoggerService>();
         builder.Services.AddControllers();
 
 
@@ -38,7 +40,7 @@ public class Programm
                 using (var scope = dbContextFactory.CreateScope())
                 {
                     var db = scope.ServiceProvider.GetRequiredService<LogDBContext>();
-                    await plkService.Run(plcHost, plcPort, db);
+                    await plkService.Run(plcHost, plcPort);
                 }
                 // если соединение разорвалось – подождём и попробуем снова
                 await Task.Delay(5000);

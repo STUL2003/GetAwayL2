@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../CameraEmulator/CameraEmulator.csproj" Id="0f6e7c24-6717-48c7-bb1a-550d0ab73e94" />
   <Project Path="../TCPPlk/TCPPlk.csproj" />
   <Project Path="GetAwayL2.csproj" />
 </Solution>

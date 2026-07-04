@@ -9,24 +9,20 @@ namespace GetAwayL2.Services
     public class InteractionPLKService : IInteractionPLK
     {
         private string msg;
-        const string mainCod = "01";
-        const string markStart = "90";
-        const string markEnd = "91";
-
-        private readonly LogDBContext dbContext;
+        private const string mainCod = "01";
+        private const string markStart = "90";
+        private const string markEnd = "91";
+        private readonly ILoggerService logger;
         private bool isValid;
-        public InteractionPLKService(LogDBContext dbContext)
+        public InteractionPLKService(ILoggerService logger)
         {
-            this.dbContext = dbContext;
+            this.logger = logger;
         }
         public async Task GetMsg4PLK()
         {
             // Получение сообщения из канала
             var ch = ChannelsByName.GetOrCreate<string>("ChannelMsg");
-            //await foreach (var x in ch.Reader.ReadAllAsync())
-            //{
-            //    msg = x;
-            //}
+
             if (await ch.Reader.WaitToReadAsync())
             {
                 if (ch.Reader.TryRead(out var message))
@@ -68,7 +64,7 @@ namespace GetAwayL2.Services
         public async Task LogDB(string fullMsg, string? error)
         {
             // Логирование в базу данных
-            await LoggerService.LogDB(dbContext, isValid, null, "PLK", fullMsg, error);
+            await logger.LogDB(isValid, null, "PLK", fullMsg, error);
         }
 
     }

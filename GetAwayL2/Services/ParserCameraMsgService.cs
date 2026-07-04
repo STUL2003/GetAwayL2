@@ -5,14 +5,15 @@ namespace GetAwayL2.Services
 {
     public class ParserCameraMsgService : IParserCameraMsg
     {
-        private readonly LogDBContext dbContext;
-        private CamMsgRequest camMsgRequest;
+        private string camMsgRequest;
         private bool isValid;
-        public ParserCameraMsgService(LogDBContext dbContext, CamMsgRequest camMsgRequest)
+        private readonly ILoggerService logger;
+
+        public ParserCameraMsgService(ILoggerService logger)
         {
-            this.dbContext = dbContext;
-            this.camMsgRequest = camMsgRequest;
+
             this.isValid = false;
+            this.logger = logger;
         }
         public async Task<string> ParseCamMsgAsync()
         {
@@ -20,15 +21,14 @@ namespace GetAwayL2.Services
 
             try
             {
-                var msg = camMsgRequest.msg;
-                isValid = msg == null? false : true;
-                isValid = msg == "READ" || msg == "NOREAD" ? true : false;
+                isValid = camMsgRequest == null? false : true;
+                isValid = camMsgRequest == "READ" || camMsgRequest == "NOREAD" ? true : false;
                 await LogDB();
                 // Закидываем в канал для дальнейшей обработки
                 var ch = ChannelsByName.GetOrCreate<string>("ChannelMsg");
-                await ch.Writer.WriteAsync(msg);
+                await ch.Writer.WriteAsync(camMsgRequest);
 
-                return msg;
+                return camMsgRequest;
 
 
             }
@@ -37,13 +37,13 @@ namespace GetAwayL2.Services
                 throw new Exception("Error parsing camera message");
             }
         }
-        public void SetRequest(CamMsgRequest request)
+        public void SetRequest(string request)
         {
             this.camMsgRequest = request;
         }
         public async Task LogDB()
         {
-            await LoggerService.LogDB(dbContext, isValid, camMsgRequest, "Camera", null, null);
+            await logger.LogDB(isValid, camMsgRequest, "Camera", null, null);
         }
     }
 }

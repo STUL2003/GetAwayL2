@@ -1,0 +1,15 @@
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\bin\Debug\net10.0\CameraEmulator.exe
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\bin\Debug\net10.0\CameraEmulator.deps.json
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\bin\Debug\net10.0\CameraEmulator.runtimeconfig.json
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\bin\Debug\net10.0\CameraEmulator.dll
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\bin\Debug\net10.0\CameraEmulator.pdb
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.AssemblyInfoInputs.cache
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.AssemblyInfo.cs
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.csproj.CoreCompileInputs.cache
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.sourcelink.json
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.dll
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\refint\CameraEmulator.dll
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.pdb
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\CameraEmulator.genruntimeconfig.cache
+C:\Users\dima\source\repos\GetAwayL2\CameraEmulator\obj\Debug\net10.0\ref\CameraEmulator.dll

@@ -1,4 +1,6 @@
-﻿using System.Net.Sockets;
+﻿using GetAwayL2.Utilities;
+using Polly;
+using System.Net.Sockets;
 
 namespace GetAwayL2.Services
 {
@@ -38,7 +40,25 @@ namespace GetAwayL2.Services
                 if (isPortOpen)
                 {
                     string message = await plkService.FormingMsg4PLK();
-                    await plkService.SendStringAsync(host, port, message);
+                    var retryPolicy = Policy.Handle<SocketException>().Or<TimeoutException>()
+                        .WaitAndRetryAsync(
+                            retryCount: 3, 
+                            sleepDurationProvider: attempt => ExponentialProvider.Calculate(attempt),
+                            onRetry: (exception, timeSpan, retryCount, context) =>{
+                                    logger.LogDB(
+                                     name: "PLK",
+                                     camMsgRequest: message,
+                                     message: null,
+                                     error: $"Ошибка отправки: {exception.Message} (попытка {retryCount})",
+                                     isValid: false);
+                            }
+                        );
+
+                    await retryPolicy.ExecuteAsync(async () =>
+                    {
+                        await plkService.SendStringAsync(host, port, message);
+                    });
+
                     await plkService.LogDB(message, null);
                 }
                 else

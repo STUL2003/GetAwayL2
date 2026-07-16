@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "J8t7NA7CbcE=",
+  "dgSpecHash": "96l167WR4/k=",
   "success": true,
   "projectFilePath": "C:\\Users\\dima\\source\\repos\\GetAwayL2\\TCPPlk\\TCPPlk.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\dima\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "У пакета \"Microsoft.OpenApi\" 2.0.0 есть известная уязвимость https://github.com/advisories/GHSA-v5pm-xwqc-g5wc (уровень серьезности: высокий уровень)",
+      "projectPath": "C:\\Users\\dima\\source\\repos\\GetAwayL2\\TCPPlk\\TCPPlk.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\dima\\source\\repos\\GetAwayL2\\TCPPlk\\TCPPlk.csproj",
+      "libraryId": "Microsoft.OpenApi",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

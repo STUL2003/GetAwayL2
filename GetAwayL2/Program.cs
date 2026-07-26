@@ -30,22 +30,24 @@ public class Programm
         var dbContextFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
 
         // Configure the HTTP request pipeline
-        _ = Task.Run(async () =>
-        {
-            string plcHost = "127.0.0.1";
-            int plcPort = 5000;
+        //_ = Task.Run(async () =>
+        //{
+        //    string plcHost = "127.0.0.1";
+        //    int plcPort = 5000;
 
-            while (true)
-            {
-                using (var scope = dbContextFactory.CreateScope())
-                {
-                    var db = scope.ServiceProvider.GetRequiredService<LogDBContext>();
-                    await plkService.Run(plcHost, plcPort);
-                }
-                // если соединение разорвалось – подождём и попробуем снова
-                await Task.Delay(5000);
-            }
-        });
+        //    while (true)
+        //    {
+        //        using (var scope = dbContextFactory.CreateScope())
+        //        {
+        //            var db = scope.ServiceProvider.GetRequiredService<LogDBContext>();
+        //            await plkService.Run(plcHost, plcPort);
+        //        }
+        //        // если соединение разорвалось – подождём и попробуем снова
+        //        await Task.Delay(5000);
+        //    }
+        //});
+
+        builder.Services.AddHostedService<PlcBackgroundService>();
 
         if (app.Environment.IsDevelopment())
         {
